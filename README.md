@@ -7,9 +7,12 @@ Analysing the impact of the competing risk by using the cumulative incidence fun
 
 
 Use the following status as an example; Event of interest is local recurrence and death is competing risk.
+
 LR -- Local recurrence
 OS -- Overall survival
 
 status = 0 LR=0 & OS=0
+
 status = 1 LR=1
+
 status = 2 LR=0 & OS=1
