@@ -1,11 +1,11 @@
 library(cmprsk)
 setwd("folder_name") # Set it to the working folder. 
 library(readxl)
-CR <- read_excel("Compteting_risk_analysis.xlsx")  # File with the classification, status and eventtime.
-attach(CR)
+Competing_Risk <- read_excel("Compteting_risk_analysis.xlsx")  # File with the classification, status and eventtime.
+attach(Competing_Risk)
 
-Gene1=factor(Gene1, levels=c(0,1), labels= c("Low", "High"))
-table(Gene1, status)
-tapply(eventtime, list(Gene1, status), mean)
+Risk_group=factor(Risk_group, levels=c(0,1), labels= c("Low", "High"))
+table(Risk_group, status)
+tapply(eventtime, list(Risk_group, status), mean)
 source (file.choose())
-fit=CumIncidence (eventtime, status, Gene1, cencode = 0, xlab="Months")
+fit=CumIncidence (eventtime, status, Risk_group, cencode = 0, xlab="Months")
